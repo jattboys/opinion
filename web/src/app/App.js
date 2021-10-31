@@ -14,7 +14,7 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/poll">Poll</Link>
+              <Link to="/create">Create</Link>
             </li>
           </ul>
         </nav>
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/" exact>
             <HomeContainer />
           </Route>
-          <Route path="/poll" exact>
+          <Route path="/create" exact>
             <PollContainer />
           </Route>
         </Switch>
