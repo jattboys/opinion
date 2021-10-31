@@ -2,7 +2,10 @@ import React from "react";
 import { DownVotesIcon, UpVoteIcon } from "./HomeComponent.assets";
 export default function HomeComponent({ title, upVotes, downVotes, doUpVote, doDownVote }) {
   return (
-    <div className="flex flex-row justify-center items-center w-auto m-12">
+    <div
+      className="flex flex-row justify-center items-center w-auto mx-3 md:mx-12"
+      style={{ height: "70vh" }}
+    >
       <div
         className="border border-gray-800 rounded-md shadow-lg flex flex-col p-4"
         style={{ maxWidth: "40rem", width: "100%" }}
