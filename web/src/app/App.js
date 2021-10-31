@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomeContainer from "./home/HomeContainer";
 import PollContainer from "./poll/PollContainer";
 import NavbarComponent from "./navbar/NavbarComponent";
+import FooterComponent from "./footer/FooterComponent";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <PollContainer />
           </Route>
         </Switch>
+        <FooterComponent />
       </div>
     </Router>
   );
