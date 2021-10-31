@@ -1,9 +1,4 @@
-import {
-  doc,
-  increment,
-  onSnapshot,
-  updateDoc,
-} from "@firebase/firestore";
+import { doc, increment, onSnapshot, updateDoc } from "@firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { db } from "../../config/firebase";
@@ -15,6 +10,7 @@ export default function HomeContainer() {
   const [title, setTitle] = useState(null);
   const [upVotes, setUpVotes] = useState(0);
   const [downVotes, setDownVotes] = useState(0);
+  const [isShareModalVisible, setIsShareModalVisible] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
@@ -52,6 +48,8 @@ export default function HomeContainer() {
       downVotes={downVotes}
       doDownVote={doDownVote}
       doUpVote={doUpVote}
+      isShareModalVisible={isShareModalVisible}
+      setIsShareModalVisible={setIsShareModalVisible}
     />
   ) : (
     <p>Click on the plus icon below to create opinions!</p>
