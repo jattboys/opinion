@@ -1,9 +1,14 @@
 import React from "react";
 import QRCode from "react-qr-code";
+import { toast } from "react-toastify";
 
-import { SolidPlusIcon } from "../icons";
+import { SolidPlusIcon, LinkIcon } from "../icons";
 
-export default function ShareModalComponent({ showModal, setShowModal }) {
+export default function ShareModalComponent({
+  copyUrl,
+  showModal,
+  setShowModal,
+}) {
   return (
     showModal && (
       <section className="fixed inset-0 w-full h-full bg-gray-400 bg-opacity-30">
@@ -20,8 +25,28 @@ export default function ShareModalComponent({ showModal, setShowModal }) {
               />
             </div>
 
+            {/* QR Code */}
             <div className="flex justify-center">
               <QRCode value={window.location.href} />
+            </div>
+
+            {/* Share link */}
+            <div>
+              <LinkIcon
+                className="w-6 h-6 cursor-pointer hover:text-blue-600"
+                onClick={() => {
+                  copyUrl();
+                  toast("🦄 Wow link copied!", {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                }}
+              />
             </div>
           </div>
         </div>
