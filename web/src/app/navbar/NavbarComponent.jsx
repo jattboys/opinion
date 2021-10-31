@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function NavbarComponent() {
   return (
-    <nav>
+    <nav className="p-5 shadow-md">
       <ul>
         <li>
           <Link to="/">Home</Link>
