@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PollComponent({ handleSubmit }) {
   return (
-    <div className="flex flex-row justify-center items-center w-screen mt-12">
+    <div className="flex flex-row justify-center items-center w-screen m-12">
       <form
         onSubmit={(e) => {
           e.preventDefault();

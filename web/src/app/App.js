@@ -10,17 +10,18 @@ export default function App() {
   return (
     <Router>
       <NavbarComponent />
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+      <FooterComponent />
       <Switch>
-        <Route path="/" exact>
-          <HomeContainer />
-        </Route>
         <Route path="/create" exact>
           <PollContainer />
         </Route>
+        <Route path="/:id">
+          <HomeContainer />
+        </Route>
+        <Route path="/">
+          <HomeContainer />
+        </Route>
       </Switch>
-      <FooterComponent />
     </Router>
   );
 }
