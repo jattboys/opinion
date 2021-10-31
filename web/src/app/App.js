@@ -22,10 +22,10 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <HomeContainer />
           </Route>
-          <Route path="/poll">
+          <Route path="/poll" exact>
             <PollContainer />
           </Route>
         </Switch>
