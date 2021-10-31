@@ -31,23 +31,24 @@ export default function ShareModalComponent({
             </div>
 
             {/* Share link */}
-            <div>
-              <LinkIcon
-                className="w-6 h-6 cursor-pointer hover:text-blue-600"
-                onClick={() => {
-                  copyUrl();
-                  toast("🦄 Wow link copied!", {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                  });
-                }}
-              />
-            </div>
+            <button
+              onClick={() => {
+                copyUrl();
+                toast("🦄 Wow link copied!", {
+                  position: "bottom-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+              }}
+              className="flex justify-between w-full p-3 text-center bg-gray-300 rounded-lg hover:bg-blue-600 hover:text-white"
+            >
+              Copy to clipboard
+              <LinkIcon className="w-6 h-6 cursor-pointer" />
+            </button>
           </div>
         </div>
       </section>
